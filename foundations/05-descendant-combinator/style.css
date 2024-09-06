@@ -1,0 +1,13 @@
+.container .text {
+    background-color: yellow;
+    color: red;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* 
+could've also done:
+ div[space]p
+ div[space].text
+ .container[space]p
+*/
