@@ -2,41 +2,52 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.para,
+.para, 
 .small-para {
   color: hsl(0, 0%, 0%);
   font-weight: 800;
+  font-size: 22px;
 }
+/* separate rule was added previously to increase .para to 22px forcing .small-para to inherit.
+   moved that rule to preceding .para grouping so that .small-para rule below would apply correctly. */
 
 .small-para {
   font-size: 14px;
   font-weight: 800;
 }
 
-.para {
-  font-size: 22px;
+.button {
+  font-size: 20px;
 }
 
-.confirm {
+#confirm-button {
   background: green;
   color: white;
   font-weight: bold;
 } 
 
-.button {
+#cancel-button {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  font-size: 20px;
 }
 
-.child {
+/* font size needed to remain the same for the buttons so I added .button rule to cover that.
+then changed former confirm and cancel class rules to be ID rules to apply differences.
+Solution file has all cancel-button rules under .button and then just adds #confirm-button
+for color specifics. */
+
+.text.child {
   color: rgb(0, 0, 0);
   font-weight: 800;
   font-size: 14px;
 }
 
-div.text {
+.text {
   color: rgb(0, 0, 0);
   font-size: 22px;
   font-weight: 100;
 }
+
+/* .child element is a child of div so it's inheriting all div rules. 
+  changed div.text rule to just be .text
+  changed .child rule to be .text.child to match specificity with class.*/
